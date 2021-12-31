@@ -39,6 +39,8 @@
 # 0 <= haystack.length, needle.length <= 5 * 104
 # haystack and needle consist of only lower-case English characters.
 
+# get the length of needle, then use for loop traverse haystack, check if haystack[i : i + k] == needle, return i
+
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         if len(needle) == 0:
