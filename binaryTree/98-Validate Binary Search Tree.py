@@ -22,6 +22,7 @@ class Solution:
     def valid(self, root, left, right):
         if root == None:
             return True
+            
         if(root.val <= left):
             return False
         if(root.val >= right):
