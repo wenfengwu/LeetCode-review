@@ -20,17 +20,15 @@ class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         fast = head
         slow = head
-        # advance fast to nth position
         for i in range(n):
             fast = fast.next
-            
-        if not fast:
+        #if n is the length of the linklist, the delete node will be the head, so return head.next
+        if fast == None:
             return head.next
-        # then advance both fast and slow now they are nth postions apart
-        # when fast gets to None, slow will be just before the item to be deleted
-        while fast.next:
-            slow = slow.next
+        #locate the slow pointer to the node before the delete node
+        while fast and fast.next:
             fast = fast.next
-        # delete the node
+            slow = slow.next
+        #reassign the pointer, means delete the node
         slow.next = slow.next.next
         return head
