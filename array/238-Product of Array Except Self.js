@@ -55,3 +55,18 @@
 };
 
 console.log(productExceptSelf([1,2,3,4]));
+
+
+// Python sulution
+// class Solution:
+//     def productExceptSelf(self, nums: List[int]) -> List[int]:
+//         pre = 1
+//         post = 1
+//         result = [1] * len(nums)
+//         for i in range(len(nums)):
+//             result[i] = result[i] * pre
+//             pre = pre * nums[i]
+//         for j in range(len(nums) - 1, -1, -1):
+//             result[j] = result[j] * post
+//             post = post * nums[j]
+//         return result
