@@ -34,3 +34,18 @@ var containsDuplicate = function(nums) {
     }
     return false;
 };
+
+//Python solution, using set
+// class Solution:
+//     def containsDuplicate(self, nums: List[int]) -> bool:
+//         return len(set(nums)) != len(nums)
+
+//Python solution, using dictionary
+// class Solution:
+//     def containsDuplicate(self, nums: List[int]) -> bool:
+//         tempDict = {}
+//         for index, value in enumerate(nums):
+//             if value in tempDict:
+//                 return True
+//             tempDict[value] = index
+//         return False
