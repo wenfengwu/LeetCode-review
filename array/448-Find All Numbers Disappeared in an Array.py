@@ -21,13 +21,16 @@
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         for i in range(len(nums)):
+            #get the index
             j = abs(nums[i]) - 1
+            #if this value of index has been change, continue
             if nums[j] < 0:
                 continue
             else:
-                nums[j] = nums[j] * -1     
+                #change it to negative number
+                nums[j] = nums[j] * -1
         result = []
-        for i in range(len(nums)):
-            if nums[i] > 0:
-                result.append(i + 1)
+        for k in range(len(nums)):
+            if nums[k] > 0:
+                result.append(k+1)
         return result
