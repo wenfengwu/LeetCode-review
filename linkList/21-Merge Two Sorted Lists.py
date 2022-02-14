@@ -16,7 +16,6 @@
 
 # Output: [0]
 
-iterative way
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -37,3 +36,16 @@ class Solution:
             temp = temp.next
         temp.next = l1 or l2  
         return dummy.next 
+
+#recursive solution
+# class Solution:
+#     def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+#         if not l1 or not l2:
+#             return l1 or l2
+#         if l1.val < l2.val:
+#             l1.next = mergeTwoLists(l1.next, l2)
+#             return l1
+#         else:
+#             l2.next = mergeTwoLists(l1, l2.next)
+#             return l2
+        
