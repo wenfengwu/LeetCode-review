@@ -21,8 +21,8 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        temp = cur = ListNode(0)
         carry = 0
-        result = node = ListNode(0)
         
         while l1 or l2 or carry:
             if l1:
@@ -31,8 +31,10 @@ class Solution:
             if l2:
                 carry += l2.val
                 l2 = l2.next
-            carry, val = divmod(carry, 10)
-            node.next = ListNode(val)
-            node = node.next
-        
-        return result.next
+            
+            val = carry % 10
+            carry = carry // 10
+            cur.next = ListNode(val)
+            cur = cur.next
+            
+        return temp.next
