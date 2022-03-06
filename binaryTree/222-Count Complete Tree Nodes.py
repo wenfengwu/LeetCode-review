@@ -30,20 +30,7 @@
 #         self.right = right
 class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
-        hl = root
-        hr = root
-        countLeft = 0
-        countRight = 0
+        if not root:
+            return 0
         
-        while hl:
-            hl = hl.left
-            countLeft += 1
-        
-        while hr:
-            hr = hr.right
-            countRight += 1
-        
-        if countLeft == countRight:
-            return 2**countLeft-1
-        
-        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+        return self.countNodes(root.left) + self.countNodes(root.right) + 1
