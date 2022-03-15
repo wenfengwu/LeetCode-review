@@ -78,7 +78,7 @@ class Solution:
                 else:
                     mat[x][y] = mat[x][y] + count - 1
             
-            # when each level traversal finishes, we count + 1
+            # when each level traversal finishes, we count + 1 then out of the loop
             count += 1
             
         return mat
