@@ -30,10 +30,12 @@ class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
             return
-        current = root
-        if not current.left and not current.right:
-            return current
-        current.left, current.right = current.right, current.left
-        self.invertTree(current.left)
-        self.invertTree(current.right)
+
+        temp = root
+
+        temp.left, temp.right = temp.right, temp.left
+
+        self.invertTree(temp.left)
+        self.invertTree(temp.right)
+
         return root
