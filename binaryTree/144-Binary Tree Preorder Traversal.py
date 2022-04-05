@@ -30,6 +30,7 @@ class Solution:
     def preOrder(self, root, result):
         if root == None:
             return
+            
         result.append(root.val)
         self.preOrder(root.left, result)
         self.preOrder(root.right, result)
