@@ -22,6 +22,7 @@ class Solution:
     def inorder(self, root, res):
         if not root:
             return
+            
         self.inorder(root.left, res)
         res.append(root.val)
         self.inorder(root.right, res)
