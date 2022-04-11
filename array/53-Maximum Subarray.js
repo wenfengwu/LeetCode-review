@@ -36,3 +36,27 @@ var maxSubArray = function(nums) {
     }
     return maxVal;
 };
+
+//Python
+// class Solution:
+//     def maxSubArray(self, nums: List[int]) -> int:
+//         maxVal = nums[0]
+//         for i in range(1, len(nums)):
+//             nums[i] = max(nums[i-1] + nums[i], nums[i])
+//             maxVal = max(maxVal, nums[i])
+            
+//         return maxVal
+
+
+// class Solution:
+//     def maxSubArray(self, nums: List[int]) -> int:
+//         maxSub = nums[0]
+//         curSum = 0
+        
+//         for n in nums:
+//             if curSum < 0:
+//                 curSum = 0
+//             curSum += n
+//             maxSub = max(maxSub, curSum)
+            
+//         return maxSub
