@@ -39,3 +39,23 @@ class Solution:
                 return second
         #if there is no node or only one node, return head node 
         return head
+
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode(0, head)
+        prev, cur = dummy, head
+        
+        while cur and cur.next:
+            #save ptrs
+            nextPair = cur.next.next
+            second = cur.next
+            
+            #swap nodes
+            second.next = cur
+            cur.next = nextPair
+            prev.next = second
+            
+            #udapte pointers
+            prev = cur
+            cur = nextPair
+            
+        return dummy.next
